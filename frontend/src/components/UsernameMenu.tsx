@@ -12,8 +12,8 @@ const UsernameMenu = () => {
     <DropdownMenu>
       <DropdownMenuTrigger 
       className="flex items-center px-3 font-semibold 
-      hover: text-cyan-500 gap-2">
-      <CircleUserIcon className="text-cyan-500"/>
+      hover:text-cyan-500 gap-2">
+      <CircleUserIcon className="text-cyan-600"/>
       {user?.email}
       </DropdownMenuTrigger>
        <DropdownMenuContent>
@@ -21,14 +21,14 @@ const UsernameMenu = () => {
        <Link 
          to="/user-profile" 
          className="font-bold 
-         hover:text-cyan-500">
+         hover: text-cyan-600">
             User Profile
          </Link>
        </DropdownMenuItem>
        <Separator/> 
        <DropdownMenuItem>
         <Button onClick={() => logout()} 
-        className="flex flex-1 font-bold bg-cyan-500"
+        className="flex flex-1 font-bold hover:bg-cyan-600"
         >
             Log Out
         </Button>
