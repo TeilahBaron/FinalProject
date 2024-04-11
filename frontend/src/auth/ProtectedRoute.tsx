@@ -3,7 +3,7 @@ import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = () => {
     const { isAuthenticated } = useAuth0();
-    return isAuthenticated ? (<Outlet/>) : (<Navigate to="/" replace />)
+    return isAuthenticated ? (<Outlet/>) : (<Navigate to="https://share-plate-frontend.onrender.com"/>)
 };
 
 export default ProtectedRoute;
