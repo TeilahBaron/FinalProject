@@ -1,7 +1,15 @@
 import landingImage from "../assets/landing.png";
 import appDownloadImage from "../assets/appdownload.png";
+import SearchBar, { SearchForm } from "@/components/SearchBar";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+    const navigate = useNavigate();
+    const handleSearchSubmit = (searchFormValues: SearchForm) => {
+        navigate({
+            pathname: `/search/${searchFormValues.searchQuery}`,
+          });  
+    };
   return(
     <div className="flex flex-col gap-12">
         <div className=" md:px-32 bg-white rounded-lg shadow-md py-8 lex flex-col gap-5 text-center -mt-16">
@@ -9,6 +17,8 @@ const HomePage = () => {
                 SharePlate: Sharing Surplus, Nourishing Communities
             </h1>
             <span className="text-lg">Join the moovment to reduce food waste and fight hunger together</span>
+            <SearchBar placeHolder="Search by City or Town"
+          onSubmit={handleSearchSubmit} />
         </div>
         <div className="grid md:grid-cols-2 gap-5">
             <img src={landingImage} />
